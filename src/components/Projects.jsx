@@ -124,7 +124,7 @@ export const Projects = async () => {
           ) : null}
         </div>
         <a
-          href="https://github.com/Adith628"
+          href="https://github.com/Adith-628"
           className="text-center flex justify-center items-center gap-2 z-20 transition-all duration-100 text-sm underline text-white/50 hover:text-violet-400 "
         >
           <span>More projects</span>
