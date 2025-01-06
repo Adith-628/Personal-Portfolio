@@ -1,0 +1,331 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.75rem;
+    --neon-1-1: #a7d575;
+    --neon-1-2: #52abc4;
+    --neon-2-1: #37eaf7;
+    --neon-2-2: #c624ee;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply m-0 box-border border-border p-0;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  html.lenis,
+  html.lenis body {
+    @apply h-auto;
+  }
+
+  .lenis.lenis-smooth {
+    @apply scroll-auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    @apply overscroll-contain;
+  }
+
+  .lenis.lenis-stopped {
+    @apply overflow-hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    @apply pointer-events-none;
+  }
+}
+
+@layer utilities {
+  .shadow-sm {
+    /* todo: cleanup css */
+    @apply shadow-none;
+  }
+}
+
+.highlight {
+  --looking-bg-1: var(--neon-1-1);
+  --looking-bg-2: var(--neon-1-2);
+
+  background: var(--bar-gradient);
+  --bar-gradient: linear-gradient(
+    90deg,
+    var(--looking-bg-1) -45%,
+    var(--looking-bg-2) 125%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.highlight2 {
+  --looking-bg-1: var(--neon-2-1);
+  --looking-bg-2: var(--neon-2-2);
+
+  background: var(--bar-gradient);
+  --bar-gradient: linear-gradient(
+    90deg,
+    var(--looking-bg-1) -45%,
+    var(--looking-bg-2) 125%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Apply custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust width to your preference */
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Dark background for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3a3a3a; /* Dark color for the thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+  border: 3px solid #1e1e1e; /* Matches the track background for a neat look */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a #1e1e1e;
+}
+
+/* Custom button */
+.boton-elegante {
+  border: 2px solid #2c2c2c;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.boton-elegante::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(40, 40, 40, 0.393) 0%,
+    rgba(111, 111, 111, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.75s ease;
+}
+
+.boton-elegante:hover::after {
+  transform: scale(4);
+}
+
+.boton-elegante:hover {
+  border-color: #666666;
+  /* background: #000000; */
+}
+
+.card {
+  --card-width: 16rem;
+  --primer-color: hsl(241, 100%, 70%);
+  --text-color: hsl(0, 0%, 100%);
+  --text-color-L2: hsl(0, 0%, 60%);
+  --transition: all 0.5s cubic-bezier(0.13, 0.78, 0.3, 0.99);
+  background: hsl(0, 0%, 10%);
+
+  font-size: 12px;
+  line-height: 2;
+
+  border-radius: 1em;
+  padding-bottom: 0.5em;
+  z-index: 20;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.2s ease-in;
+}
+.detial {
+  width: var(--card-width);
+  padding: 01em 1em;
+  color: var(--text-color);
+  transition: all 0.2s ease-in;
+
+  z-index: 1;
+}
+.name {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5em 0;
+}
+
+.content {
+  color: var(--text-color);
+  width: var(--card-width);
+  position: absolute;
+  transform: rotate3D(0.4, 1, 0.4, 0deg) scale(0.4);
+  padding: 2em;
+  opacity: 0;
+  height: 20em;
+  overflow: hidden;
+}
+
+.thumb {
+  margin: 1rem 0;
+  width: var(--card-width);
+  /* height: 20em; */
+  overflow: hidden;
+  transition: var(--transition);
+
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thumb svg {
+  transform: scale(7);
+  color: hsla(0, 0%, 100%, 0.2);
+}
+
+.card:hover {
+  background-color: hsl(0, 0%, 15%);
+  box-shadow: 0px 20px 40px hsl(40, 60%, 0%, 0.4),
+    inset 1px 2px 4px rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+.card:hover .detial {
+  padding: 1em 2em;
+}
+
+.card:hover .thumb {
+  opacity: 0.2;
+  filter: blur(20px);
+  transform: scale(1.5);
+}
+.card:hover .content {
+  transform: none;
+  opacity: 1;
+  transition: var(--transition);
+}
+
+.infomation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.propertion {
+  font-size: 0.8em;
+  color: var(--text-color-L2);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3em;
+  padding: 0 0.5em;
+  border-radius: 1em;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+.action:hover {
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.6),
+    inset 0.5px 1px 2px rgba(255, 255, 255, 0.1);
+  background: hsla(0, 0%, 50%, 0.1);
+}
+
+.mode {
+  color: var(--text-color-L2);
+  padding: 0.4em;
+  width: 2em;
+  height: 2em;
+  border-radius: 0.5em;
+  transition: var(--transition);
+}
+.mode:hover {
+  color: var(--text-color);
+  background: hsla(0, 0%, 50%, 0.15);
+  transform: scale(1.2);
+  box-shadow: 2px 4px 16px hsla(0, 0%, 100%, 0.1);
+}
+.mode:active {
+  background: hsla(0, 0%, 50%, 0.3);
+  transform: scale(1);
+}
+.mode.hide {
+  opacity: 0;
+  transition: var(--transition);
+}
+.action:hover .mode.hide {
+  opacity: 1;
+}
+
+.level {
+  color: rgb(230, 204, 89);
+}
