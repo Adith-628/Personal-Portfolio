@@ -10,7 +10,7 @@ import { getPinnedRepos, getRepos } from "../Data/data";
 import { IconLink } from "@tabler/icons-react";
 
 export const Projects = async () => {
-  const username = "Adith628";
+  const username = "Adith-628";
 
   const [repositories, pinnedNames] = await Promise.all([
     getRepos(username),
