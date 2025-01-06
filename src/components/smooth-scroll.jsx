@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { ReactLenis, useLenis } from "lenis/rea ct";
+import { ReactLenis, useLenis } from "lenis/react";
 
 const SmoothScroll = ({ children }) => {
   const lenis = useLenis(({ scroll }) => {
