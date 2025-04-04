@@ -27,6 +27,45 @@ export const Experience = () => {
             <span className="flex flex-col">
               <div className="">
                 <h3 className="-mt-1 mb-1 text-xl font-firaSans font-bold">
+                  Full Stack Intern
+                </h3>
+              </div>
+              <h4 className="text-sm mb-1 font-fira font-semibold text-white/70">
+                Frinks AI
+              </h4>
+              <h4 className="text-xs mb-1 text-white/40">
+                Internship · Jan 2025 - March 2025
+              </h4>
+            </span>
+            <p className="text-sm text-gray-200">
+              As a Full Stack Intern at Frinks AI, I contributed to the
+              development of an internal ERP software to streamline company
+              operations. My responsibilities included designing and
+              implementing frontend components for a seamless user experience
+              and developing backend APIs for efficient data management. I
+              optimized database queries, integrated authentication mechanisms,
+              and ensured the system's scalability. Additionally, I collaborated
+              with cross-functional teams to enhance system performance and
+              deployment workflows using Git and other development tools.
+            </p>
+          </div>
+
+          {/* <div className="">
+            <FloatingDockDemo />
+          </div> */}
+
+          {/* <Badges
+            list={fullStack}
+            block="stack"
+            fullContainer="fullContainer"
+            color={undefined}
+          /> */}
+        </div>
+        <div className="relative flex flex-col gap-4 max-w-5xl border border-primary-dark rounded-xl p-8 bg-background-dim2">
+          <div className="flex flex-col gap-4 max-w-[calc(var(--grid-32)*20)]">
+            <span className="flex flex-col">
+              <div className="">
+                <h3 className="-mt-1 mb-1 text-xl font-firaSans font-bold">
                   Nextjs Developer Intern
                 </h3>
               </div>
@@ -34,7 +73,7 @@ export const Experience = () => {
                 Oronium
               </h4>
               <h4 className="text-xs mb-1 text-white/40">
-                Permanent Full Time · Present
+                Internship · Present
               </h4>
             </span>
             <p className="text-sm text-gray-200">
