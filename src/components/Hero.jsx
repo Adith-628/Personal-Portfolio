@@ -45,7 +45,7 @@ export const Hero = () => {
             <button
               className="boton-elegante flex gap-2 px-4 py-2 bg-black font-fira text-sm md:text-base md:px-8 md:py-4"
               onClick={() =>
-                window.open("https://github.com/Adith-628", "_blank")
+                window.open("https://github.com/Adith628", "_blank")
               }
             >
               <Github size={22} />
